@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: agendamento-clinica
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn agendamento_clinica.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: agendamento_clinica.settings
+      - key: PYTHON_VERSION
+        value: 3.12.1
