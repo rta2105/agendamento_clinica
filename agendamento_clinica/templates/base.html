@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Clínica Escola{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#002C5F] text-white min-h-screen flex flex-col items-center justify-start py-10">
+  <header class="w-full flex justify-center mb-10">
+    <img src="{% static 'logo estacio.png' %}" alt="Estácio" class="h-20">
+  </header>
+
+  <main class="w-full max-w-xl bg-white text-black rounded-2xl shadow-lg p-8">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="text-center mt-10 text-sm text-white/80">
+    Sistema de Agendamento – Clínica Escola Estácio © 2025
+  </footer>
+</body>
+</html>
