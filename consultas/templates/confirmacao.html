@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80vh; color: white;">
+    <h2 style="color: #1CA4E8;">Consulta Agendada com Sucesso!</h2>
+    <p>Você receberá um e-mail com os detalhes da sua consulta em breve.</p>
+    <a href="{% url 'home' %}" style="margin-top: 20px; color: #1CA4E8;">Voltar para a página inicial</a>
+</main>
+{% endblock %}

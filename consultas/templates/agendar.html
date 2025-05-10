@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Agendar Consulta{% endblock %}
+
+{% block content %}
+<style>
+    .agendamento-container {
+        background-color: #002b5c;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 500px;
+        margin: 40px auto;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .agendamento-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #1CA4E8;
+    }
+
+    form label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        font-size: 1em;
+        background-color: #f0f0f0;
+        color: #000;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: #1CA4E8;
+        color: white;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    form button:hover {
+        background-color: #148ec2;
+    }
+
+    .link-voltar {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .link-voltar a {
+        color: #1CA4E8;
+        text-decoration: none;
+    }
+
+    .link-voltar a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="agendamento-container">
+    <h2>Agendamento de Consulta</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Confirmar Agendamento</button>
+    </form>
+    <div class="link-voltar">
+        <p><a href="{% url 'home' %}">← Voltar ao Início</a></p>
+    </div>
+</div>
+{% endblock %}
